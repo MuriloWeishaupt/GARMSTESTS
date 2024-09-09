@@ -1,12 +1,15 @@
 import './App.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import Navbar from './components/Navbar.jsx'
+
 
 const api = axios.create({
   baseURL: 'http://3.145.65.214:3000',
 });
 
 function App() {
+
   const [cars, setCars] = useState([])
   const [carro, setName] = useState('')
   const [marca, setMarca] = useState('')
@@ -31,8 +34,9 @@ function App() {
       .catch(error => console.error('Erro ao adicionar carro:', error))
   }
 
-  return (
+  return ( 
     <div>
+      <Navbar/>
       <img id='img-garms' src="https://github.com/MaathJason/GARMSTESTS/raw/main/.github/workflows/garmslogo.png" alt="img-GARMS"/>
       <div className='title'>      
         <h1>Cadastro de Carros</h1>
